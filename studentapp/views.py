@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from .models import Student,Users
 from .controller import aboutController
 from django.contrib.auth.models import User
@@ -23,7 +23,7 @@ def counter(request):
 
 def about(request):
     studentList=Student.objects.all()
-    return render(request,"about.html",{"studentList":studentList})
+    return render(request,"about/about.html",{"studentList":studentList})
 
 def signup(request):
     return render(request,"signup.html")
@@ -63,3 +63,10 @@ def register(request):
 
 def signin(request):
    return render(request,'signin.html')
+
+def post(request):
+    return render(request,'post.html')
+    # return JsonResponse({'success':"True",'message':"sorry page not found"})
+
+def postid(request,id):
+    return render(request,'post.html',{'id':id})

@@ -4,7 +4,7 @@ from django.db import models
 class Student(models.Model):
     first_name=models.CharField(max_length=200)
     last_name=models.CharField(max_length=255)
-    age=models.IntegerField(max_length=50)
+    age=models.IntegerField()
     phone=models.CharField(max_length=100)
     Address=models.CharField(max_length=255)
     

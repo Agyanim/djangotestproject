@@ -11,5 +11,7 @@ urlpatterns=[
     path('signin',views.signin,name='signin'),
     path('register',views.register,name="register"),
     path('login',views.login,name="login"),
+    path('post',views.post,name='post'),
+    path('post/<str:id>',views.postid,name='post'),
 
 ]
