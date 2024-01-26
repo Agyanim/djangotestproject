@@ -1,0 +1,29 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <main class="flex flex-col justify-center items-center">
+      <h1 class="text-blue-500 text-4xl my-10">createpost.com</h1>
+      <form class="w-[50%]" action="create_post_handler" method="post">
+        {% csrf_token%}
+        <div class="flex flex-col gap-2 mb-5">
+          <label  class="text-gray-500 text-lg" for="title">Title: </label>
+          <input class=" border border-gray-400 rounded text-gray-500" type="text" name="title" />
+        </div>
+        <div class="flex flex-col gap-2 mb-5">
+          <label class="text-gray-500 text-lg"  for="description">Description</label>
+          <textarea class="overflow-y-auto border border-gray-400 rounded text-gray-500" name="description" rows="10"></textarea>
+        </div>
+        <div class="bg-blue-600 w-[8rem] text-center rounded">
+          <input class="text-white py-2 font-bold " type="submit" value="Create Post" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

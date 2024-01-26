@@ -64,9 +64,3 @@ def register(request):
 def signin(request):
    return render(request,'signin.html')
 
-def post(request):
-    return render(request,'post.html')
-    # return JsonResponse({'success':"True",'message':"sorry page not found"})
-
-def postid(request,id):
-    return render(request,'post.html',{'id':id})
